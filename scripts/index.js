@@ -1,19 +1,13 @@
+var circleCount = 0;
 const container = document.querySelector('.circle-container');
 const deleteBtn = document.getElementById('del-circle');
 deleteBtn.style.backgroundColor = '#4343437e';
 deleteBtn.style.cursor = 'none'
 
-if(navigator.cookieEnabled === false){
-    alert('Cookies off')
+if(document.cookie == ''){
+    circleCount = 3;
+    createStartCircle(circleCount);
 }
-
-document.cookie = "name=JonSnow;max-age=9000;path=/";
-document.cookie = "name=Bolton;max-age=9000;path=/";
-document.cookie = "name=Dog;max-age=9000;path=/";
-
-console.log('***');
-console.log(document.cookie);
-
 
 document.getElementById('add-circle').addEventListener('click', () =>{
     let element = document.createElement('div');
@@ -32,5 +26,13 @@ document.getElementById('del-circle').addEventListener('click', () =>{
         deleteBtn.style.cursor = 'none'
     }
 });
+
+function createStartCircle(count){
+    for(let i = 0; i < count; i++){
+        let element = document.createElement('div');
+        element.className = 'circle';
+        container.appendChild(element);
+    }
+}
 
 

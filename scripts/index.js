@@ -7,7 +7,7 @@ deleteBtn.style.cursor = 'none'
 if(document.cookie == ''){
     circleCount = 3;
     createStartCircle(circleCount);
-    document.cookie = "current=3";
+    document.cookie = `current=3;max-age=${24*60*60}`;
 }
 
 document.getElementById('add-circle').addEventListener('click', () =>{

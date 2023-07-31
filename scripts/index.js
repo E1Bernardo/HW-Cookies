@@ -16,6 +16,8 @@ document.getElementById('add-circle').addEventListener('click', () =>{
     container.appendChild(element);
     deleteBtn.style.backgroundColor = 'white';
     deleteBtn.style.cursor = 'pointer'
+    document.cookie = `current=3`;
+    console.log(document.cookie);
 });
 
 document.getElementById('del-circle').addEventListener('click', () =>{
